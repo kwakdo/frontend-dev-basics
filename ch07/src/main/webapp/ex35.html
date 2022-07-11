@@ -6,13 +6,29 @@
 <script type="text/javascript">
 /* jquery plug in */
 $(function() {
-	$('h1').flash();
+	// $('h1').flash();
 	$("#btn").click(function(){
-		$(this)
-			.hello()
-			.flash();
+		$(this).hello();
 	});
-});  
+});
+
+/* jquery plug-in hello */
+$.fn.hello = function() {
+	console.log('Hello World');
+	console.log(this.length); //1
+	console.log(this.attr('title'));
+	return this;
+}
+
+/* jquery plug-in hello */
+$.fn.flash = function() {
+	var _this = this;
+	setInterval(function(){
+		_this
+	}, 1000);
+}
+
+
 </script>
 </head>
 <body>
